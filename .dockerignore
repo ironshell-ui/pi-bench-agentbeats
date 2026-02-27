@@ -33,3 +33,5 @@ results/
 *.egg-info
 dist/
 build/
+
+amber/.env

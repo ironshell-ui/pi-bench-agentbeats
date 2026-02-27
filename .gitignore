@@ -56,3 +56,5 @@ docs-backup/
 
 # Claude Code sessions
 *.txt
+
+amber/.env

@@ -1,0 +1,44 @@
+{
+  manifest_version: "0.1.0",
+  program: {
+    image: "ghcr.io/jyoti-ranjan-das845/gpt-oss-sg-120b:latest",
+    entrypoint: [
+      "gpt-oss-sg-120b",
+      "--host", 
+      "0.0.0.0", 
+      "--port", 
+      "8080",
+      "--card-url",
+      "http://purple-agent:8080"
+    ],
+    env: {
+      PROXY_URL: "${slots.proxy.url}",
+      OPENAI_API_KEY: "${config.openai_api_key}",
+      NEBIUS_API_KEY: "${config.nebius_api_key}",
+      LOG_LEVEL: "INFO"
+    },
+    network: {
+      endpoints: [
+        { name: "endpoint", port: 8080 },
+      ],
+    },
+  },
+  config_schema: {
+    type: "object",
+    properties: {
+      openai_api_key: { type: "string", secret: true },
+      nebius_api_key: { type: "string", secret: true },
+    },
+    required: ["openai_api_key", "nebius_api_key"],
+    additionalProperties: false,
+  },
+  slots: {
+    proxy: { kind: "a2a" },
+  },
+  provides: {
+    a2a: { kind: "a2a", endpoint: "endpoint" },
+  },
+  exports: {
+    a2a: "a2a",
+  },
+}
