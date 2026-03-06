@@ -1,14 +1,12 @@
 # PolicyBeats Leaderboard scenario.toml
-# Format follows AgentBeats tutorial: https://docs.agentbeats.dev/tutorial/
-
 [green_agent]
-agentbeats_id = ""  # Fill with green agent UUID from AgentBeats after registration
-env = {}            # PolicyBeats green agent needs no API keys (deterministic, no LLM judges)
+image = "ghcr.io/ironshell-ui/pi-bench-agentbeats:latest"
+env = {}
 
 [[participants]]
-agentbeats_id = ""  # Fill with purple agent UUID from AgentBeats
+image = "ghcr.io/ironshell-ui/claudecowork-agent:latest"
 name = "agent"
-env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
+env = { DEEPSEEK_API_KEY = "${DEEPSEEK_API_KEY}", KIMI_API_KEY = "${KIMI_API_KEY}", MINIMAX_API_KEY = "${MINIMAX_API_KEY}", SERPAPI_KEY = "${SERPAPI_KEY}", OPENAI_API_KEY = "${OPENAI_API_KEY}" }
 
 [config]
 domain = "policy_compliance"
