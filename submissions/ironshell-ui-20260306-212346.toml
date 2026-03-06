@@ -1,0 +1,13 @@
+# PolicyBeats Leaderboard scenario.toml
+[green_agent]
+agentbeats_id = "Jyoti-Ranjan-Das845/pi-bench"
+env = {}
+
+[[participants]]
+agentbeats_id = "ironshell-ui/ironshell"
+name = "agent"
+env = { DEEPSEEK_API_KEY = "${DEEPSEEK_API_KEY}", KIMI_API_KEY = "${KIMI_API_KEY}", MINIMAX_API_KEY = "${MINIMAX_API_KEY}", SERPAPI_KEY = "${SERPAPI_KEY}", OPENAI_API_KEY = "${OPENAI_API_KEY}", GOOGLE_API_KEY = "${GOOGLE_API_KEY}" }
+
+[config]
+domain = "policy_compliance"
+num_tasks = 36
