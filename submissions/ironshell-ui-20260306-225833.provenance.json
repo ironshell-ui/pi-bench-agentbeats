@@ -1,0 +1,17 @@
+{
+  "image_digests": {
+    "green-agent": "ghcr.io/jyoti-ranjan-das845/pi-bench-green@sha256:02865c0615928a2610cfeed2c05b5411f354e1e6dc5841d502a944c433d9f75c",
+    "agent": "ghcr.io/ironshell-ui/claudecowork-agent@sha256:4e94d341d679f6b7012bd16f475def73da4d5faf3cf547059f0a1e44caf9160e",
+    "agentbeats-client": "ghcr.io/agentbeats/agentbeats-client@sha256:13dfe3ef4e583a80e7ce2fe3becd0ce3b879841368a7f4fa40b6ebbabeeb014e"
+  },
+  "timestamp": "2026-03-06T22:58:33Z",
+  "github_actions": {
+    "run_url": "https://github.com/ironshell-ui/pi-bench-agentbeats/actions/runs/22785293276",
+    "run_logs_url": "https://api.github.com/repos/ironshell-ui/pi-bench-agentbeats/actions/runs/22785293276/logs",
+    "ref": "refs/heads/main",
+    "sha": "de42a80e417269f61a46d4a35271e272b6120c25",
+    "repository_url": "https://github.com/ironshell-ui/pi-bench-agentbeats",
+    "workflow_ref": "ironshell-ui/pi-bench-agentbeats/.github/workflows/run-scenario.yml@refs/heads/main",
+    "workflow_sha": "de42a80e417269f61a46d4a35271e272b6120c25"
+  }
+}
