@@ -14,7 +14,6 @@ jobs:
     permissions:
       contents: write
       packages: read
-      workflows: write
 
     steps:
       - name: Checkout
@@ -106,13 +105,14 @@ jobs:
           git remote add upstream https://github.com/${{ steps.target.outputs.repo }}.git
           git fetch upstream
           git checkout -b ${{ steps.metadata.outputs.branch_name }} upstream/main
+          git rm -r --cached .github/ 2>/dev/null || true
 
       - name: Commit results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -f submissions/${{ steps.metadata.outputs.unique_name }}.toml submissions/${{ steps.metadata.outputs.unique_name }}.provenance.json results/${{ steps.metadata.outputs.unique_name }}.json
-          git commit -m "Submission: ${{ steps.metadata.outputs.unique_name }}
+          git commit --allow-empty -m "Submission: ${{ steps.metadata.outputs.unique_name }}
 
           Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           git push origin ${{ steps.metadata.outputs.branch_name }}
