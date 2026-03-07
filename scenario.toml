@@ -1,4 +1,4 @@
-# run: HARD DEBUG Monte Carlo v4.0 — 2026-03-06T19:00
+# run: Pi-bench v8.0 A2A format fix + auto tool-calls — 2026-03-07T15:35
 # PolicyBeats Leaderboard scenario.toml
 [green_agent]
 agentbeats_id = "Jyoti-Ranjan-Das845/pi-bench"
@@ -13,4 +13,4 @@ env = { DEEPSEEK_API_KEY = "${DEEPSEEK_API_KEY}", KIMI_API_KEY = "${KIMI_API_KEY
 domain = "policy_compliance"
 num_tasks = 36
 
-run_id = 7
+run_id = 8
