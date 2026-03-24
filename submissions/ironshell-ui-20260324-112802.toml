@@ -1,0 +1,13 @@
+[green_agent]
+agentbeats_id = "Jyoti-Ranjan-Das845/pi-bench"
+env = {}
+
+[[participants]]
+agentbeats_id = "ironshell-ui/ironshell"
+name = "agent"
+env = { OPENAI_API_KEY = "${OPENAI_API_KEY}", OPENAI_API_BASE = "http://cli-proxy:8317/v1", LLM_MODEL = "claude-sonnet-4-6" }
+
+[config]
+domain = "policy_compliance"
+num_tasks = 36
+run_id = 11
