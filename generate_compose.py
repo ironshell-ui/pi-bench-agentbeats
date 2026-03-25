@@ -99,11 +99,13 @@ PARTICIPANT_TEMPLATE = """  {name}:
     command: ["--host", "0.0.0.0", "--port", "{port}"]
     environment:{env}
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:{port}/.well-known/agent-card.json"]
+      test:
+        - CMD-SHELL
+        - python -c "import urllib.request; urllib.request.urlopen('http://localhost:{port}/.well-known/agent-card.json')" || exit 1
       interval: 5s
       timeout: 3s
-      retries: 10
-      start_period: 30s
+      retries: 15
+      start_period: 10s
     networks:
       - agent-network
 """
